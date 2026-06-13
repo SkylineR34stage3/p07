@@ -1,4 +1,4 @@
-from ..ex0.creatures import Creature
+from ex0.creatures import Creature
 from .capabilities import HealCapability, TransformCapability
 
 
@@ -25,8 +25,9 @@ class Bloomelle(Creature, HealCapability):
 
 
 class Shiftling(Creature, TransformCapability):
-    def __init__(self):
-        super().__init__("Shiftling", "Normal")
+    def __init__(self) -> None:
+        Creature.__init__(self, "Shiftling", "Normal")
+        TransformCapability.__init__(self)
 
     def attack(self) -> str:
         if self._transformed:
@@ -44,8 +45,9 @@ class Shiftling(Creature, TransformCapability):
 
 
 class Morphagon(Creature, TransformCapability):
-    def __init__(self):
-        super().__init__("Morphagon", "Normal")
+    def __init__(self) -> None:
+        Creature.__init__(self, "Morphagon", "Normal/Dragon")
+        TransformCapability.__init__(self)
 
     def attack(self) -> str:
         if self._transformed:
@@ -59,4 +61,4 @@ class Morphagon(Creature, TransformCapability):
 
     def revert(self) -> str:
         self._transformed = False
-        return f"{self._name}  stabilizes its form."
+        return f"{self._name} stabilizes its form."
