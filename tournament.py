@@ -47,7 +47,7 @@ def main() -> None:
         (FlameFactory(), NormalStrategy()),
         (HealingCreatureFactory(), DefensiveStrategy())
         ]
-    print(f" {opponents}")
+    print(" [ (Flameling+Normal), (Healing+Defensive) ]")
     err_catcher(opponents)
 
     print("\nTournament 1 (error)")
@@ -55,7 +55,7 @@ def main() -> None:
         (FlameFactory(), AggressiveStrategy()),
         (HealingCreatureFactory(), DefensiveStrategy())
         ]
-    print(f" {opponents}")
+    print(" [ (Flameling+Aggressive), (Healing+Defensive) ]")
     err_catcher(opponents)
 
     print("\nTournament 2 (multiple)")
@@ -64,7 +64,7 @@ def main() -> None:
         (HealingCreatureFactory(), DefensiveStrategy()),
         (TransformCreatureFactory(), AggressiveStrategy())
         ]
-    print(f" {opponents}")
+    print(" [ (Aquabub+Normal), (Healing+Defensive), (Transform+Aggressive) ]")
     err_catcher(opponents)
 
 
